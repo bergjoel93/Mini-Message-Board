@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/838c344978.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="msg-header">
+        <i class="fa-solid fa-angle-left"></i>
+        <div class="rec-info">
+          <img
+            src="/images/profile.png"
+            alt="profile picture"
+            class="profile-picture"
+          />
+
+          <div class="rec-info2">
+            <div class="name">
+              <div class="online-circle"></div>
+              Hello, World!
+            </div>
+            <div class="distance">420 feet away</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+
+      <div id="message-container">
+        <div id="msg-when">Today</div>
+
+        <% messages.forEach(message => { %>
+        <div id="message-block">
+          <div id="outer-message-bubble">
+            <div id="message-sent-bubble">
+              <div id="message-text"><%= message.text %></div>
+              <em><%= toMilitaryTime(message.added) %></em>
+              <div id="little-triangle"></div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+
+      <div id="message-form-container">
+        <%- include('new') %>
+        <div id="msg-options-container">
+          <div id="text-icon">Aa</div>
+          <i class="fa-solid fa-camera"></i>
+          <i class="fa-sharp fa-solid fa-face-smile"></i>
+          <i class="fa-solid fa-location-arrow"></i>
+          <i class="fa-solid fa-comment-dots"></i>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
