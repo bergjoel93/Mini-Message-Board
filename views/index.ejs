@@ -40,7 +40,8 @@
           <div id="outer-message-bubble">
             <div id="message-sent-bubble">
               <div id="message-text"><%= message.text %></div>
-              <em><%= toMilitaryTime(message.added) %></em>
+              <div id="message-user"><%= message.user %></div>
+              <em><%= toMilitaryTime(message.date) %></em>
               <div id="little-triangle"></div>
             </div>
           </div>
@@ -49,7 +50,26 @@
       </div>
 
       <div id="message-form-container">
-        <%- include('new') %>
+        <div id="form-container">
+          <form action="/new" method="POST">
+            <input
+              type="text"
+              id="message"
+              name="text"
+              placeholder="Say something..."
+            />
+
+            <input
+              type="text"
+              name="user"
+              placeholder="Type Your Name..."
+              id="user"
+            />
+
+            <button type="submit">Add Message!</button>
+          </form>
+        </div>
+
         <div id="msg-options-container">
           <div id="text-icon">Aa</div>
           <i class="fa-solid fa-camera"></i>
