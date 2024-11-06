@@ -31,7 +31,6 @@ body {
 
 #main-container {
   width: 500px;
-  min-height: 900px;
   background-color: var(--bg1);
   color: rgb(216, 216, 216);
   display: flex;
@@ -88,7 +87,7 @@ body {
 #message-container {
   border-top: solid gray 1px;
   overflow-y: auto;
-  height: 630px;
+  height: 540px;
 }
 
 #msg-when {
