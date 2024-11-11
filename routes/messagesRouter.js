@@ -1,3 +1,5 @@
+// routes/messagesRouter.js
+
 const { Router } = require("express");
 const messagesController = require("../controllers/messagesController");
 
